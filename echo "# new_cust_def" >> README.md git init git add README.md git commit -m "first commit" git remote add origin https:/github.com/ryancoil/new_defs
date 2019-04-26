@@ -1,0 +1,31 @@
+ ifelse(New_class_Adcostly$sourceMedium == '(direct) / (none)', 'direct', 
+ ifelse(New_class_Adcostly$sourceMedium == 'email / newsletter','Email - Newlsetter',    
+ ifelse(New_class_Adcostly$sourceMedium == 'bluecore / email'| New_class_Adcostly$sourceMedium == 'email / welcome','Email - triggered',
+ ifelse(grepl('nontm', New_class_Adcostly$campaign) & grepl('shop', New_class_Adcostly$campaign) ,'NBPS - shopping',
+ ifelse(grepl('nontm', New_class_Adcostly$campaign) & grepl('acqu', New_class_Adcostly$campaign) ,'NBPS - acquisition',
+ ifelse(grepl('youtube', New_class_Adcostly$campaign) ,'Youtube - preroll',
+ ifelse(grepl('nontm', New_class_Adcostly$campaign) ,'NBPS - remainder',
+ ifelse(grepl('- tm -', New_class_Adcostly$campaign) & grepl('shop', New_class_Adcostly$campaign)  ,'Brand - shopping',
+ ifelse(grepl('- tm -', New_class_Adcostly$campaign) & grepl('acq', New_class_Adcostly$campaign)  ,'Brand - acquisition',
+ ifelse(grepl('- tm -', New_class_Adcostly$campaign) , 'Brand - remainder',
+ ifelse(grepl('gsp - remark', New_class_Adcostly$campaign) & grepl('acq', New_class_Adcostly$campaign)| 
+     grepl('- acquisition - dn - remarketing ', New_class_Adcostly$campaign)|grepl('dn - remark',New_class_Adcostly$campaign),'GSP Remarketing - acquisition',
+ ifelse(grepl('dn - prospect', New_class_Adcostly$campaign)  ,'GSP - prospecting',
+ ifelse(grepl('gsp - remark', New_class_Adcostly$campaign)  ,'GSP Remarketing - remainder',
+ ifelse(grepl('impactradius', New_class_Adcostly$sourceMedium) & grepl('loyal', New_class_Adcostly$sourceMedium),'Affiliate - Loyalty',
+ if ifelse(grepl('impactradius', New_class_Adcostly$sourceMedium)|grepl('affiliate', New_class_Adcostly$sourceMedium),'Affiliate - Remainder',      
+ ifelse(grepl('criteo', New_class_Adcostly$sourceMedium) & grepl('retar', New_class_Adcostly$campaign),'Criteo - Retargeting',     
+ ifelse(grepl('criteo', New_class_Adcostly$sourceMedium) & grepl('audience', New_class_Adcostly$campaign),'Criteo - Audience match',     
+ ifelse(grepl('criteo', New_class_Adcostly$sourceMedium) & grepl('acq', New_class_Adcostly$campaign),'Criteo - Acquisition',     
+ ifelse(grepl('criteo', New_class_Adcostly$sourceMedium), 'Criteo - Remainder', 
+ ifelse(grepl('facebook / paidsocial', New_class_Adcostly$sourceMedium) & grepl('prosp', New_class_Adcostly$campaign), 'Pd Social - Paid Acquisition', 
+ ifelse(grepl('facebook / paidsocial', New_class_Adcostly$sourceMedium) & grepl('remar', New_class_Adcostly$campaign), 'Pd Social - Remarketing', 
+ ifelse(grepl('facebook / paidsocial', New_class_Adcostly$sourceMedium) | grepl('instagram / paid', New_class_Adcostly$sourceMedium), 'Pd Social - Remainder', 
+ ifelse(grepl('facebook.com / ref', New_class_Adcostly$sourceMedium)| grepl('gram.com / ref',New_class_Adcostly$sourceMedium)|
+        grepl('pinterest.com / ref',New_class_Adcostly$sourceMedium)| grepl('/ social', New_class_Adcostly$sourceMedium)|
+       grepl('social / ', New_class_Adcostly$sourceMedium) , 'social - organic',
+ ifelse(grepl('organic', New_class_Adcostly$sourceMedium), 'search - organic', 
+ ifelse(grepl('referral', New_class_Adcostly$sourceMedium), 'referral', 
+ ifelse(grepl('cpc', New_class_Adcostly$sourceMedium) ,'Paid - remainder'
+   , 'other'
+    )))))))))))))))))))))))))))
